@@ -331,6 +331,14 @@ namespace TextToSpeech
             voicer.SetRate(value);
             lblRateValue.Text = value.ToString();
         }
+
+        private void btnSpeechRemove_Click(object sender, EventArgs e)
+        {
+            if (currentState.Get().SpeechList is null || currentState.Get().SpeechList.Count <= 0) return;
+            int id = cbxSelectSpeech.SelectedIndex;
+            currentState.Get().SpeechList.RemoveAt(id);
+            cbxSelectSpeech.DataSource = currentState.Get().SpeechesTitles;
+        }
     }
 
     

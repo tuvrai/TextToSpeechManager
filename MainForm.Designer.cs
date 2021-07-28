@@ -49,6 +49,7 @@ namespace TextToSpeech
             this.trackBarRateChange = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
             this.lblRateValue = new System.Windows.Forms.Label();
+            this.btnSpeechRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRateChange)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,7 +152,7 @@ namespace TextToSpeech
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(172, 434);
+            this.label3.Location = new System.Drawing.Point(172, 459);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 9;
@@ -181,7 +182,7 @@ namespace TextToSpeech
             // lblScenarioTitle
             // 
             this.lblScenarioTitle.AutoSize = true;
-            this.lblScenarioTitle.Location = new System.Drawing.Point(243, 434);
+            this.lblScenarioTitle.Location = new System.Drawing.Point(243, 459);
             this.lblScenarioTitle.Name = "lblScenarioTitle";
             this.lblScenarioTitle.Size = new System.Drawing.Size(64, 13);
             this.lblScenarioTitle.TabIndex = 12;
@@ -208,7 +209,7 @@ namespace TextToSpeech
             // 
             // btnSaveScenario
             // 
-            this.btnSaveScenario.Location = new System.Drawing.Point(17, 425);
+            this.btnSaveScenario.Location = new System.Drawing.Point(16, 425);
             this.btnSaveScenario.Name = "btnSaveScenario";
             this.btnSaveScenario.Size = new System.Drawing.Size(149, 30);
             this.btnSaveScenario.TabIndex = 15;
@@ -218,7 +219,7 @@ namespace TextToSpeech
             // 
             // btnScenarioRun
             // 
-            this.btnScenarioRun.Location = new System.Drawing.Point(645, 434);
+            this.btnScenarioRun.Location = new System.Drawing.Point(645, 459);
             this.btnScenarioRun.Name = "btnScenarioRun";
             this.btnScenarioRun.Size = new System.Drawing.Size(130, 23);
             this.btnScenarioRun.TabIndex = 16;
@@ -228,7 +229,7 @@ namespace TextToSpeech
             // 
             // trackBarRateChange
             // 
-            this.trackBarRateChange.Location = new System.Drawing.Point(470, 434);
+            this.trackBarRateChange.Location = new System.Drawing.Point(470, 459);
             this.trackBarRateChange.Minimum = -10;
             this.trackBarRateChange.Name = "trackBarRateChange";
             this.trackBarRateChange.Size = new System.Drawing.Size(169, 45);
@@ -238,7 +239,7 @@ namespace TextToSpeech
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(376, 439);
+            this.label5.Location = new System.Drawing.Point(376, 464);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 18;
@@ -247,17 +248,28 @@ namespace TextToSpeech
             // lblRateValue
             // 
             this.lblRateValue.AutoSize = true;
-            this.lblRateValue.Location = new System.Drawing.Point(437, 439);
+            this.lblRateValue.Location = new System.Drawing.Point(437, 464);
             this.lblRateValue.Name = "lblRateValue";
             this.lblRateValue.Size = new System.Drawing.Size(13, 13);
             this.lblRateValue.TabIndex = 19;
             this.lblRateValue.Text = "0";
             // 
+            // btnSpeechRemove
+            // 
+            this.btnSpeechRemove.Location = new System.Drawing.Point(278, 425);
+            this.btnSpeechRemove.Name = "btnSpeechRemove";
+            this.btnSpeechRemove.Size = new System.Drawing.Size(218, 23);
+            this.btnSpeechRemove.TabIndex = 20;
+            this.btnSpeechRemove.Text = "Usuń aktualną kwestię";
+            this.btnSpeechRemove.UseVisualStyleBackColor = true;
+            this.btnSpeechRemove.Click += new System.EventHandler(this.btnSpeechRemove_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 474);
+            this.ClientSize = new System.Drawing.Size(792, 508);
+            this.Controls.Add(this.btnSpeechRemove);
             this.Controls.Add(this.lblRateValue);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.trackBarRateChange);
@@ -310,5 +322,6 @@ namespace TextToSpeech
         private System.Windows.Forms.TrackBar trackBarRateChange;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblRateValue;
+        private System.Windows.Forms.Button btnSpeechRemove;
     }
 }
