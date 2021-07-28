@@ -37,6 +37,7 @@ namespace TextToSpeech
 
         private CurrentState currentState;
         private Voicer voicer;
+        private ScenarioEditForm scenarioEditForm;
         public MainForm()
         {
             KeyPreview = true;
@@ -337,6 +338,19 @@ namespace TextToSpeech
             if (currentState.Get().SpeechList is null || currentState.Get().SpeechList.Count <= 0) return;
             int id = cbxSelectSpeech.SelectedIndex;
             currentState.Get().SpeechList.RemoveAt(id);
+            cbxSelectSpeech.DataSource = currentState.Get().SpeechesTitles;
+        }
+
+        private void btnScenarioManage_Click(object sender, EventArgs e)
+        {
+            if (currentState.Get() is null || currentState.Get().SpeechList.Count <= 0) return;
+            scenarioEditForm = new ScenarioEditForm(ref currentState);
+            scenarioEditForm.Deactivate += OnClosingForm; 
+            scenarioEditForm.Show();
+        }
+
+        private void OnClosingForm(object sender, EventArgs e)
+        {
             cbxSelectSpeech.DataSource = currentState.Get().SpeechesTitles;
         }
     }
