@@ -13,6 +13,38 @@ namespace TextToSpeech
         public string Name { get; set; }
         public List<Speech> SpeechList { get; set; }
 
+        public void MoveUp(int idMoveItemUp)
+        {
+            try
+            {
+                if (idMoveItemUp < 1) throw new ItemExceedsListException();
+                int idMoveItemDown = idMoveItemUp - 1;
+                Speech temp = SpeechList[idMoveItemDown];
+                SpeechList[idMoveItemDown] = SpeechList[idMoveItemUp];
+                SpeechList[idMoveItemUp] = temp;
+            }
+            catch (ItemExceedsListException e)
+            {
+                throw;
+            }
+        }
+
+        internal void MoveDown(int idMoveItemDown)
+        {
+            try
+            {
+                if (idMoveItemDown > SpeechList.Count - 2) throw new ItemExceedsListException();
+                int idMoveItemUp = idMoveItemDown + 1;
+                Speech temp = SpeechList[idMoveItemDown];
+                SpeechList[idMoveItemDown] = SpeechList[idMoveItemUp];
+                SpeechList[idMoveItemUp] = temp;
+            }
+            catch(ItemExceedsListException e)
+            {
+                throw;
+            }
+        }
+
         [XmlIgnore]
         public List<String> SpeechesTitles
         {
@@ -27,6 +59,8 @@ namespace TextToSpeech
                 return titles;
             }
         }
+
+
 
         [XmlIgnore]
         public int GetSize

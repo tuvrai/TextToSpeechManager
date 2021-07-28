@@ -50,6 +50,7 @@ namespace TextToSpeech
             this.label5 = new System.Windows.Forms.Label();
             this.lblRateValue = new System.Windows.Forms.Label();
             this.btnSpeechRemove = new System.Windows.Forms.Button();
+            this.btnScenarioManage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRateChange)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,11 +265,22 @@ namespace TextToSpeech
             this.btnSpeechRemove.UseVisualStyleBackColor = true;
             this.btnSpeechRemove.Click += new System.EventHandler(this.btnSpeechRemove_Click);
             // 
+            // btnScenarioManage
+            // 
+            this.btnScenarioManage.Location = new System.Drawing.Point(171, 425);
+            this.btnScenarioManage.Name = "btnScenarioManage";
+            this.btnScenarioManage.Size = new System.Drawing.Size(98, 23);
+            this.btnScenarioManage.TabIndex = 21;
+            this.btnScenarioManage.Text = "Edytuj scenariusz";
+            this.btnScenarioManage.UseVisualStyleBackColor = true;
+            this.btnScenarioManage.Click += new System.EventHandler(this.btnScenarioManage_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 508);
+            this.Controls.Add(this.btnScenarioManage);
             this.Controls.Add(this.btnSpeechRemove);
             this.Controls.Add(this.lblRateValue);
             this.Controls.Add(this.label5);
@@ -323,5 +335,6 @@ namespace TextToSpeech
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblRateValue;
         private System.Windows.Forms.Button btnSpeechRemove;
+        private System.Windows.Forms.Button btnScenarioManage;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,18 @@ namespace TextToSpeech
     [XmlRoot]
     public class Speech
     {
-        public string Title { get; set; }
+        private string title;
+        public string Title
+        {
+            get
+            {
+                return title;
+            }
+            set
+            {
+                title = value;
+            }
+        }
         public string Text { get; set; } = "";
         public string VoiceName { get; set; }
         public int Rate { get; set; } = 0;
