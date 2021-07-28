@@ -351,6 +351,7 @@ namespace TextToSpeech
 
         private void OnClosingForm(object sender, EventArgs e)
         {
+            lblScenarioTitle.Text = currentState.Get().Name;
             cbxSelectSpeech.DataSource = currentState.Get().SpeechesTitles;
         }
     }
